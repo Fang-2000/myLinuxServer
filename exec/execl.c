@@ -1,7 +1,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int main(){
+int main() {
+
+
     // 创建一个子进程，在子进程中执行exec函数族中的函数
     pid_t pid = fork();
 
@@ -13,7 +15,7 @@ int main(){
     }else if(pid == 0) {
         // 子进程
         // 调用自己写的可执行程序
-        execl("/home/f/MyCppProject/myLinuxServer/myLinuxServer/exec/hello","hello", NULL);
+        execl("/home/f/MyCppProject/myLinuxServer/myLinuxServer/exec/hello","hello",NULL);
 
         // 调用系统进程
         // execl("/bin/ps", "ps", "aux", NULL);
@@ -26,6 +28,6 @@ int main(){
         printf("i = %d, pid = %d\n", i, getpid());
     }
 
+
     return 0;
 }
-    
